@@ -35,6 +35,7 @@ int _print(char *str)
 		if (((str[i] > 0 && str[i] < 32) || str[i] >= 127))
 		{
 			print("\\x");
+			count += 2;
 			buff = itoa(str[i], 16);
 			if (str[i] < 17)
 				_putchar('0');
@@ -44,9 +45,10 @@ int _print(char *str)
 					_putchar(buff[j] - 32);
 				else
 					_putchar(buff[j]);
+				count += 1;
 			}
-			count += 2;
-			count += hex_print(str[i]);
+			
+			
 		}
 		else
 		{
