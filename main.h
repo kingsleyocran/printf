@@ -19,6 +19,7 @@ int percent_handler(const char *, va_list, int *);
 
 /* printers */
 int print_string(va_list);
+int print_non_printable(va_list);
 int print_char(va_list);
 int print_integer(va_list);
 int print_binary(va_list);
