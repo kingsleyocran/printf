@@ -26,16 +26,19 @@ int print_non_printable(va_list list)
  */
 int _print(char *str)
 {
-	int i;
+	int i, j;
 	char *buff;
 
 	for (i = 0; str[i] != '\0'; ++i)
 	{
-		if (!((str[i] > 0 && str[i] < 32) || str[i] >= 127))
+		if (((str[i] > 0 && str[i] < 32) || str[i] >= 127))
 		{
 			print("\\x");
 			buff = itoa(str[i], 16);
-			print((buff != NULL) ? buff : "NULL");
+			if (str[i] < 17)
+				_putchar('0');
+			for (j = 0; buff[j] != '\0'; ++j)
+				_putchar(buff[j] - 32);
 		}
 		else
 			_putchar(str[i]);
