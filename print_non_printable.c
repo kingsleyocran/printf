@@ -19,7 +19,7 @@ int print_non_printable(va_list list)
 }
 
 /**
- * _print_non_printable - print char.
+ * _print - print char.
  * @str: string.
  *
  * Return: string length.
@@ -38,7 +38,11 @@ int _print(char *str)
 			if (str[i] < 17)
 				_putchar('0');
 			for (j = 0; buff[j] != '\0'; ++j)
-				_putchar(buff[j] - 32);
+			{
+				if (buff[j] >= 97)
+					_putchar(buff[j] - 32);
+				else
+					_putchar(buff[j]);
 		}
 		else
 			_putchar(str[i]);
