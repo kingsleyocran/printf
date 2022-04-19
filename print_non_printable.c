@@ -43,6 +43,7 @@ int _print(char *str)
 					_putchar(buff[j] - 32);
 				else
 					_putchar(buff[j]);
+			}
 		}
 		else
 			_putchar(str[i]);
