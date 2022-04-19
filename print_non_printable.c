@@ -32,7 +32,7 @@ int _print(char *str)
 	{
 		if (!((str[i] > 0 && str[i] < 32) || str[i] >= 127))
 		{
-			print("\x");
+			print("\\x");
 			print_hexadecimal_upp(str[i]);
 		}
 		else
