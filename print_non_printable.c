@@ -27,6 +27,7 @@ int print_non_printable(va_list list)
 int _print(char *str)
 {
 	int i, j;
+	int count = 0;
 	char *buff;
 
 	for (i = 0; str[i] != '\0'; ++i)
@@ -44,10 +45,16 @@ int _print(char *str)
 				else
 					_putchar(buff[j]);
 			}
+			count += 2;
+			count += hex_print(str[i]);
 		}
 		else
+		{
 			_putchar(str[i]);
+			count += 1;
+		}
+			
 	}
 
-	return (i);
+	return (count);
 }
