@@ -27,13 +27,15 @@ int print_non_printable(va_list list)
 int _print(char *str)
 {
 	int i;
+	char *buff;
 
 	for (i = 0; str[i] != '\0'; ++i)
 	{
 		if (!((str[i] > 0 && str[i] < 32) || str[i] >= 127))
 		{
 			print("\\x");
-			print_hexadecimal_upp(str[i]);
+			buff = itoa(str[i], 16);
+			print((buff != NULL) ? buff : "NULL");
 		}
 		else
 			_putchar(str[i]);
