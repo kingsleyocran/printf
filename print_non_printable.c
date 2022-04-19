@@ -10,10 +10,10 @@
 int print_non_printable(va_list list)
 {
 	char *p;
-	int p_len1;
+	int p_len;
 
 	p = va_arg(list, char*);
-	p_len1 = _print_non_printable((p != NULL) ? p : "(null)");
+	p_len = _print((p != NULL) ? p : "(null)");
 
 	return (p_len);
 }
@@ -24,7 +24,7 @@ int print_non_printable(va_list list)
  *
  * Return: string length.
  */
-int _print_non_printable(char *str)
+int _print(char *str)
 {
 	int i;
 
